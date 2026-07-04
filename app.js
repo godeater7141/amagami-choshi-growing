@@ -9,19 +9,45 @@ async function loadData() {
 function createCard(spot) {
   const article = document.createElement("article");
   article.className = "card";
-  article.innerHTML = `
-    <span class="tag">${spot.tag}</span>
-    <h3>${spot.name}</h3>
-    <p>${spot.summary}</p>
-    <p><strong>メモ:</strong> ${spot.tip}</p>
-  `;
+
+  const media = document.createElement("div");
+  media.className = "card-media";
+  if (spot.image) {
+    const img = document.createElement("img");
+    img.src = spot.image;
+    img.alt = spot.name;
+    img.loading = "lazy";
+    media.appendChild(img);
+  }
+  article.appendChild(media);
+
+  const tag = document.createElement("span");
+  tag.className = "tag";
+  tag.textContent = spot.tag;
+  article.appendChild(tag);
+
+  const title = document.createElement("h3");
+  title.textContent = spot.name;
+  article.appendChild(title);
+
+  const summary = document.createElement("p");
+  summary.textContent = spot.summary;
+  article.appendChild(summary);
+
+  const tip = document.createElement("p");
+  tip.innerHTML = "<strong>メモ:</strong> ";
+  tip.append(document.createTextNode(spot.tip));
+  article.appendChild(tip);
+
   return article;
 }
 
 function createPanel(text) {
   const article = document.createElement("article");
   article.className = "panel";
-  article.innerHTML = `<p>${text}</p>`;
+  const p = document.createElement("p");
+  p.textContent = text;
+  article.appendChild(p);
   return article;
 }
 
@@ -35,7 +61,11 @@ async function boot() {
     const courseList = document.getElementById("courseList");
     data.course.forEach((step) => {
       const li = document.createElement("li");
-      li.innerHTML = `<strong>${step.title}</strong><span>${step.body}</span>`;
+      const strong = document.createElement("strong");
+      strong.textContent = step.title;
+      const span = document.createElement("span");
+      span.textContent = step.body;
+      li.append(strong, span);
       courseList.appendChild(li);
     });
 
