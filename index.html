@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>アマガミ銚子巡礼ガイド</title>
+    <meta
+      name="description"
+      content="アマガミの聖地巡礼と銚子市観光を、スポットデータから更新しやすくまとめた非公式ファンサイトです。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">非公式ファンサイト / 更新しやすい構成</p>
+        <h1>アマガミ銚子巡礼ガイド</h1>
+        <p class="lead">
+          聖地巡礼の定番スポットと、銚子の海・鉄道・グルメを一緒に楽しめるように整理した案内サイトです。
+          中身はデータファイルで管理するので、あとからスポット追加や文章修正がしやすくなっています。
+        </p>
+        <div class="hero-actions">
+          <a href="#spots">巡礼スポットを見る</a>
+          <a href="#course" class="ghost">モデルコースを見る</a>
+          <a href="admin/" class="ghost">CMSを開く</a>
+        </div>
+      </header>
+
+      <main>
+        <section class="note">
+          <strong>はじめに</strong>
+          <p>
+            本サイトはファンによる紹介ページです。内容は Decap CMS から更新できます。施設の営業情報や撮影ルールは変更されることがあるため、訪問前に最新情報をご確認ください。
+          </p>
+        </section>
+
+        <section id="spots" class="section">
+          <div class="section-head">
+            <h2>巡礼スポット</h2>
+            <p>スポット名、見どころ、アクセスの要点をデータで管理します。</p>
+          </div>
+          <div id="spotGrid" class="grid"></div>
+        </section>
+
+        <section id="course" class="section split">
+          <div>
+            <div class="section-head">
+              <h2>半日モデルコース</h2>
+              <p>初めての人でも回りやすい、銚子の定番を押さえた流れです。</p>
+            </div>
+            <ol id="courseList" class="timeline"></ol>
+          </div>
+          <aside class="sidebar">
+            <div class="section-head">
+              <h2>銚子の魅力</h2>
+            </div>
+            <div id="highlights" class="stack"></div>
+          </aside>
+        </section>
+
+        <section class="section split">
+          <div>
+            <div class="section-head">
+              <h2>巡礼マナー</h2>
+              <p>作品ファンとして気持ちよく楽しむための最低限のルールです。</p>
+            </div>
+            <ul id="etiquetteList" class="bullets"></ul>
+          </div>
+          <div class="sidebar accent">
+            <div class="section-head">
+              <h2>更新しやすさのポイント</h2>
+            </div>
+            <ul class="bullets compact">
+              <li>Decap CMS で `data/site-data.json` を編集</li>
+              <li>本文は `data/site-data.json` に集約</li>
+              <li>カードやコースは JS で描画</li>
+              <li>スポット追加は JSON 1 箇所の編集だけで済む</li>
+              <li>見た目は `styles.css` に分離</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
