@@ -1,120 +1,93 @@
 <!doctype html>
 <html lang="ja">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="アマガミの聖地巡礼をきっかけに、千葉県銚子市の海、電車、グルメ、街歩きの魅力を紹介するファンメイドWebサイト。" />
-    <title>アマガミ×銚子 聖地巡礼ガイド</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>アマガミ銚子巡礼ガイド</title>
+    <meta
+      name="description"
+      content="アマガミの聖地巡礼と銚子市観光を、スポットデータから更新しやすくまとめた非公式ファンサイトです。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="hero" id="top">
-      <nav class="nav" aria-label="メインナビゲーション">
-        <a class="logo" href="#top">Choshi Pilgrimage</a>
-        <div class="nav-links">
-          <a href="#spots">巡礼スポット</a>
-          <a href="#routes">モデルコース</a>
-          <a href="#charms">銚子の魅力</a>
-          <a href="#tips">旅の心得</a>
-        </div>
-      </nav>
-      <div class="hero-content">
-        <p class="eyebrow">Fan made travel guide</p>
-        <h1>アマガミの余韻を、銚子の海風と歩く。</h1>
-        <p class="lead">作品の空気を感じる街歩きと、港町・銚子ならではの景色や味覚を一緒に楽しむための聖地巡礼ガイドです。</p>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">非公式ファンサイト / 更新しやすい構成</p>
+        <h1>アマガミ銚子巡礼ガイド</h1>
+        <p class="lead">
+          聖地巡礼の定番スポットと、銚子の海・鉄道・グルメを一緒に楽しめるように整理した案内サイトです。
+          中身はデータファイルで管理するので、あとからスポット追加や文章修正がしやすくなっています。
+        </p>
         <div class="hero-actions">
-          <a class="button primary" href="#routes">半日コースを見る</a>
-          <a class="button secondary" href="#tips">マナーを確認</a>
+          <a href="#spots">巡礼スポットを見る</a>
+          <a href="#course" class="ghost">モデルコースを見る</a>
+          <a href="admin/" class="ghost">CMSを開く</a>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <main>
-      <section class="notice" aria-label="サイトの注意事項">
-        <strong>非公式ファンサイトです。</strong>
-        <span>本サイトは作品および各権利者・施設とは関係ありません。実際の訪問前には営業時間、交通情報、撮影可否を必ず公式情報で確認してください。</span>
-      </section>
+      <main>
+        <section class="note">
+          <strong>はじめに</strong>
+          <p>
+            本サイトはファンによる紹介ページです。内容は Decap CMS から更新できます。施設の営業情報や撮影ルールは変更されることがあるため、訪問前に最新情報をご確認ください。
+          </p>
+        </section>
 
-      <section class="section intro">
-        <div>
-          <p class="eyebrow">Why Choshi?</p>
-          <h2>舞台の記憶と、旅先としての楽しさを両方味わう。</h2>
-        </div>
-        <p>銚子は海、灯台、ローカル線、坂道、商店街がコンパクトにまとまった港町。聖地巡礼だけで帰るのではなく、景色を眺め、地元の食を味わい、ゆっくり歩くことで作品の思い出がより鮮やかになります。</p>
-      </section>
+        <section id="spots" class="section">
+          <div class="section-head">
+            <h2>巡礼スポット</h2>
+            <p>スポット名、見どころ、アクセスの要点をデータで管理します。</p>
+          </div>
+          <div id="spotGrid" class="grid"></div>
+        </section>
 
-      <section class="section" id="spots">
-        <div class="section-heading">
-          <p class="eyebrow">Pilgrimage spots</p>
-          <h2>訪れたいエリア</h2>
-          <p>作中の雰囲気を連想しやすい銚子の定番スポットを、巡礼と観光の両面から紹介します。</p>
-        </div>
-        <div class="cards">
-          <article class="card">
-            <div class="card-visual sea"></div>
-            <h3>犬吠埼エリア</h3>
-            <p>太平洋を望む灯台周辺は、銚子らしい開放感を一番感じられる場所。朝日や夕暮れの時間帯は写真散歩にも向いています。</p>
-            <span class="tag">海景色</span>
-          </article>
-          <article class="card">
-            <div class="card-visual rail"></div>
-            <h3>銚子電鉄沿線</h3>
-            <p>ローカル線の駅舎や車窓は、街の日常を感じる巡礼の移動そのものをイベントにしてくれます。</p>
-            <span class="tag">移動も楽しい</span>
-          </article>
-          <article class="card">
-            <div class="card-visual town"></div>
-            <h3>市街地・商店街</h3>
-            <p>港町の生活感が残る道を歩くと、作品で感じた放課後の寄り道のような空気に出会えます。</p>
-            <span class="tag">街歩き</span>
-          </article>
-        </div>
-      </section>
+        <section id="course" class="section split">
+          <div>
+            <div class="section-head">
+              <h2>半日モデルコース</h2>
+              <p>初めての人でも回りやすい、銚子の定番を押さえた流れです。</p>
+            </div>
+            <ol id="courseList" class="timeline"></ol>
+          </div>
+          <aside class="sidebar">
+            <div class="section-head">
+              <h2>銚子の魅力</h2>
+            </div>
+            <div id="highlights" class="stack"></div>
+          </aside>
+        </section>
 
-      <section class="section route-section" id="routes">
-        <div class="section-heading light">
-          <p class="eyebrow">Model route</p>
-          <h2>初めての半日モデルコース</h2>
-          <p>移動に余裕を持たせた、写真・食事・景色をバランス良く楽しむプランです。</p>
-        </div>
-        <ol class="timeline">
-          <li><span>01</span><div><h3>銚子駅からスタート</h3><p>駅周辺で観光案内や交通の確認を済ませ、巡礼メモを整理します。</p></div></li>
-          <li><span>02</span><div><h3>銚子電鉄で犬吠方面へ</h3><p>車窓の雰囲気を楽しみながら、沿線の駅や街並みをゆっくり眺めます。</p></div></li>
-          <li><span>03</span><div><h3>犬吠埼で海と灯台を満喫</h3><p>海風を感じながら散策。天候に合わせて無理のない範囲で撮影しましょう。</p></div></li>
-          <li><span>04</span><div><h3>地元グルメで締めくくり</h3><p>海鮮、ぬれ煎餅、醤油文化など、銚子ならではの味を旅の記憶に加えます。</p></div></li>
-        </ol>
-      </section>
+        <section class="section split">
+          <div>
+            <div class="section-head">
+              <h2>巡礼マナー</h2>
+              <p>作品ファンとして気持ちよく楽しむための最低限のルールです。</p>
+            </div>
+            <ul id="etiquetteList" class="bullets"></ul>
+          </div>
+          <div class="sidebar accent">
+            <div class="section-head">
+              <h2>更新しやすさのポイント</h2>
+            </div>
+            <ul class="bullets compact">
+              <li>Decap CMS で `data/site-data.json` を編集</li>
+              <li>本文は `data/site-data.json` に集約</li>
+              <li>カードやコースは JS で描画</li>
+              <li>スポット追加は JSON 1 箇所の編集だけで済む</li>
+              <li>見た目は `styles.css` に分離</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
 
-      <section class="section" id="charms">
-        <div class="section-heading">
-          <p class="eyebrow">Choshi charms</p>
-          <h2>巡礼にプラスしたい銚子の魅力</h2>
-        </div>
-        <div class="feature-grid">
-          <div class="feature"><h3>水平線の迫力</h3><p>三方を水に囲まれた銚子では、街のすぐ近くで雄大な海景色に出会えます。</p></div>
-          <div class="feature"><h3>港町の食文化</h3><p>漁港の街として知られ、海の幸や醤油文化など食の楽しみも豊富です。</p></div>
-          <div class="feature"><h3>レトロな街並み</h3><p>ローカル線や昔ながらの商店が、作品の余韻と相性の良い懐かしさを演出します。</p></div>
-          <div class="feature"><h3>日帰りしやすい距離感</h3><p>首都圏から訪れやすく、半日から一日旅まで目的に合わせて組み立てられます。</p></div>
-        </div>
-      </section>
-
-      <section class="section tips" id="tips">
-        <div class="section-heading">
-          <p class="eyebrow">Good manners</p>
-          <h2>聖地巡礼の心得</h2>
-        </div>
-        <ul class="tips-list">
-          <li>住宅地や通学路では大声を出さず、長時間の滞在や通行の妨げを避ける。</li>
-          <li>店舗・施設・駅で撮影する場合は、掲示やスタッフの案内に従う。</li>
-          <li>作品画像を現地で掲げて撮影する際も、周囲の人が写り込まないよう配慮する。</li>
-          <li>天候や公共交通の本数に余裕を持ち、最新情報を公式サイトで確認する。</li>
-        </ul>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <p>© Fan made Choshi Pilgrimage Guide</p>
-      <a href="#top">ページ上部へ戻る</a>
-    </footer>
+    <script src="app.js"></script>
   </body>
 </html>
