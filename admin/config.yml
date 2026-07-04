@@ -1,0 +1,44 @@
+backend:
+  name: github
+  repo: godeater7141/amagami-choshi-growing
+  branch: main
+
+local_backend: true
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+site_url: /
+display_url: /
+
+collections:
+  - name: site_data
+    label: サイトデータ
+    files:
+      - name: main
+        label: トップページ内容
+        file: data/site-data.json
+        format: json
+        fields:
+          - label: 巡礼スポット
+            name: spots
+            widget: list
+            fields:
+              - { label: スポット名, name: name, widget: string }
+              - { label: タグ, name: tag, widget: string }
+              - { label: 説明, name: summary, widget: text }
+              - { label: メモ, name: tip, widget: text }
+          - label: モデルコース
+            name: course
+            widget: list
+            fields:
+              - { label: 時間帯, name: title, widget: string }
+              - { label: 内容, name: body, widget: text }
+          - label: 銚子の魅力
+            name: highlights
+            widget: list
+            field: { label: 項目, name: item, widget: text }
+          - label: 巡礼マナー
+            name: etiquette
+            widget: list
+            field: { label: 項目, name: item, widget: text }
